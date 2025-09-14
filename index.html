@@ -2,36 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>QR Code Generator with Local Logo & Image Upload</title>
+  <title>QR Code Generator with Local Logo</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 </head>
 <body>
   <div class="container">
-    <h2>QR Code Generator with Local Logo & Image</h2>
+    <h2>QR Code Generator with Local Logo</h2>
 
     <input id="qrInput" type="text" placeholder="Enter text, URL or image link" />
-
-    <!-- Logo preview from local repo -->
-    <div>
-      <p>Using Local Logo (assets/logo.png):</p>
-      <img id="logoPreview" src="assets/logo.png" alt="Logo preview" style="max-height: 60px;" />
-    </div>
 
     <button onclick="generateQR()">Generate QR</button>
 
     <div id="qrCanvas"></div>
-
-    <hr />
-
-    <!-- Image upload for preview only -->
-    <label>
-      Upload Image (page preview only):
-      <input type="file" id="imageUpload" accept="image/*" />
-    </label>
-    <div class="img-preview">
-      <img id="imagePreview" src="" alt="Preview your uploaded image" style="max-height: 160px;" />
-    </div>
   </div>
 
   <script src="script.js"></script>

@@ -17,28 +17,14 @@ input[type="text"] {
   margin-bottom: 8px;
   font-size: 16px;
 }
-input[type="file"] {
-  width: 92%;
-  margin: 8px 0;
-}
 button {
   width: 96%;
   padding: 9px;
   margin-top: 10px;
-  background: #2bbe60;
+  background: #1b4d6b;
   color: #fff;
   border: none;
   font-size: 16px;
   cursor: pointer;
   border-radius: 6px;
-}
-.img-preview {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  min-height: 50px;
-}
-img {
-  max-width: 84%;
-  border-radius: 8px;
-  box-shadow: 0 1px 6px #ddd;
 }
