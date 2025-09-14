@@ -28,7 +28,7 @@ body {
 h2 {
   font-weight: 700;
   margin-bottom: 24px;
-  color: #2bbe60;
+  color: #2d0bf1;
   letter-spacing: 1.1px;
   font-size: 28px;
 }
@@ -37,19 +37,19 @@ input[type="text"] {
   width: 100%;
   padding: 14px 18px;
   margin-bottom: 24px;
-  border: 2px solid #2bbe60;
+  border: 2px solid #1e0581;
   border-radius: 10px;
   font-size: 16px;
-  outline-color: #2bbe60;
+  outline-color: #662bbe;
   transition: 0.3s border-color ease;
 }
 
 input[type="text"]:focus {
-  border-color: #13a148;
+  border-color: #4104f8;
 }
 
 button {
-  background-color: #2bbe60;
+  background-color: #09ec37;
   color: white;
   padding: 16px 0;
   font-weight: 700;
@@ -82,7 +82,7 @@ button:hover {
 
 /* Border and background appear only when QR code is generated */
 #qrCanvas:not(:empty) {
-  border: 8px solid #2bbe60;
+  border: 8px solid #0770f9;
   border-radius: 24px;
   padding: 14px;
   background: #f5f9f6;
