@@ -2,18 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>QR Code Generator</title>
+  <title>Custom QR Code Generator</title>
   <link rel="stylesheet" href="style.css">
+  <!-- qr-code-styling CDN -->
+  <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 </head>
 <body>
   <div class="container">
-    <h2>QR Code Generator</h2>
-    <input id="qrInput" type="text" placeholder="Enter text or URL" />
+    <h2>QR Code Generator with Logo & Image</h2>
+
+    <!-- Input for QR content -->
+    <input id="qrInput" type="text" placeholder="Enter text, URL, or image link">
+    
+    <!-- Logo Upload (as QR background) -->
+    <label>
+      Upload Logo for QR Background:
+      <input type="file" id="logoUpload" accept="image/*">
+    </label>
+    <!-- Uploaded Logo Preview -->
+    <div class="img-preview">
+      <img id="logoPreview" src="" alt="Logo preview" style="max-height:60px;">
+    </div>
+
+    <!-- Generate QR button -->
     <button onclick="generateQR()">Generate QR</button>
-    <div class="img-div">
-      <img id="qrImage" alt="Your QR code will appear here." />
+
+    <!-- QR code canvas -->
+    <div id="qrCanvas"></div>
+
+    <hr>
+
+    <!-- Image Upload (image preview) -->
+    <label>
+      Upload Image (Preview Only):
+      <input type="file" id="imageUpload" accept="image/*">
+    </label>
+    <div class="img-preview">
+      <img id="imagePreview" src="" alt="Preview your uploaded image" style="max-height:160px;">
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
