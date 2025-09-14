@@ -1,4 +1,4 @@
-/* Reset some default styles */
+/* Reset some defaults */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -66,10 +66,22 @@ button:hover {
   background-color: #13a148;
 }
 
+/* QR canvas styles: no border or background initially */
 #qrCanvas {
   margin-top: 30px;
   display: flex;
   justify-content: center;
+  /* Initially no border, padding or background */
+}
+
+#qrCanvas:empty {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+/* Border and background appear only when QR code is generated */
+#qrCanvas:not(:empty) {
   border: 8px solid #2bbe60;
   border-radius: 24px;
   padding: 14px;

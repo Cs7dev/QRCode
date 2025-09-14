@@ -1,8 +1,7 @@
 function generateQR() {
   const content = document.getElementById("qrInput").value.trim();
   if (!content) {
-    document.getElementById("qrCanvas").innerHTML =
-      "Enter text, URL, or image link!";
+    document.getElementById("qrCanvas").innerHTML = "Enter text, URL, or image link!";
     return;
   }
 
@@ -16,7 +15,7 @@ function generateQR() {
     type: "canvas",
     data: content,
     image: logoPath,
-    dotsOptions: { color: "#041241ff", type: "rounded" },
+    dotsOptions: { color: "#03136fff", type: "rounded" },
     backgroundOptions: { color: "#fff" },
     imageOptions: {
       crossOrigin: "anonymous",
