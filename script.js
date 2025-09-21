@@ -1,29 +1,47 @@
+let qrCodeInstance = null;
+
 function generateQR() {
-  const content = document.getElementById("qrInput").value.trim();
-  if (!content) {
-    document.getElementById("qrCanvas").innerHTML = "Enter text, URL, or image link!";
+  const inputValue = document.getElementById("qrInput").value.trim();
+  const canvasContainer = document.getElementById("qrCanvas");
+
+  if (!inputValue) {
+    canvasContainer.innerHTML = "Please enter valid text, URL, or image link!";
     return;
   }
 
-  document.getElementById("qrCanvas").innerHTML = "";
+  canvasContainer.innerHTML = "";
 
-  const logoPath = "assets/logo.png"; // Path to your local logo file
+  const logoPath = "assets/logo.png"; 
 
-  const qrCode = new QRCodeStyling({
+  qrCodeInstance = new QRCodeStyling({
     width: 250,
     height: 250,
     type: "canvas",
-    data: content,
+    data: inputValue,
     image: logoPath,
-    dotsOptions: { color: "#03136fff", type: "rounded" },
-    backgroundOptions: { color: "#fff" },
+    dotsOptions: {
+      color: "#03136fff",
+      type: "rounded"
+    },
+    backgroundOptions: {
+      color: "#fff"
+    },
     imageOptions: {
       crossOrigin: "anonymous",
       margin: 6,
       hideBackgroundDots: true,
-      imageSize: 0.4,
-    },
+      imageSize: 0.4
+    }
   });
 
-  qrCode.append(document.getElementById("qrCanvas"));
+  qrCodeInstance.append(canvasContainer);
+}
+
+function downloadQR() {
+  if (!qrCodeInstance) {
+    alert("Please generate a QR code first.");
+    return;
+  }
+
+  qrCodeInstance.download({ name: "my-qr-code", extension: "png" });
 }

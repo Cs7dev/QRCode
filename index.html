@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>QR Code Generator</title>
+  <title>QR Code Creator</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 </head>
 <body>
   <div class="container">
-    <h2>QR Code Generator</h2>
+    <h2>QR Code Creator</h2>
 
-    <input id="qrInput" type="text" placeholder="Enter text, URL or image link" />
+    <input id="qrInput" type="text" placeholder="Type text, URL, or image link" />
 
     <button onclick="generateQR()">Generate QR</button>
+    <button onclick="downloadQR()">Download QR</button>
 
     <div id="qrCanvas"></div>
   </div>

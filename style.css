@@ -60,18 +60,18 @@ button {
   width: 100%;
   box-shadow: 0 6px 20px rgba(43, 190, 96, 0.4);
   transition: background-color 0.3s ease;
+  margin-bottom: 16px;
 }
 
 button:hover {
   background-color: #13a148;
 }
 
-/* QR canvas styles: no border or background initially */
+/* QR canvas styles */
 #qrCanvas {
   margin-top: 30px;
   display: flex;
   justify-content: center;
-  /* Initially no border, padding or background */
 }
 
 #qrCanvas:empty {
@@ -80,7 +80,6 @@ button:hover {
   background: transparent;
 }
 
-/* Border and background appear only when QR code is generated */
 #qrCanvas:not(:empty) {
   border: 8px solid #0770f9;
   border-radius: 24px;
@@ -94,5 +93,10 @@ button:hover {
     width: 100%;
     padding: 30px 20px;
     border-radius: 15px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 14px 0;
   }
 }
