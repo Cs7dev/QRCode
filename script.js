@@ -14,7 +14,7 @@ function generateQR() {
   canvasContainer.innerHTML = "";
   canvasContainer.classList.add("hidden");
   validationMessage.innerHTML = "";
-  footer.classList.add("hidden");
+  if (footer) footer.classList.add("hidden");
 
   if (!isValidInput(inputValue)) {
     validationMessage.innerHTML = "⚠️ Invalid input. Please enter a valid URL or at least 3 characters.";
@@ -45,7 +45,7 @@ function generateQR() {
   qrCodeInstance.append(canvasContainer);
   canvasContainer.classList.remove("hidden");
   validationMessage.innerHTML = "✅ QR code generated successfully!";
-  footer.classList.remove("hidden");
+  if (footer) footer.classList.remove("hidden");
 }
 
 function downloadQR() {
