@@ -52,10 +52,17 @@ function generateQR() {
     const radius = (canvasEl.width * 0.55) / 2 + 6;
 
     ctx.globalCompositeOperation = 'destination-over';
-    ctx.fillStyle = "white";
+
+    // Radial gradient
+    const gradient = ctx.createRadialGradient(centerX, centerY, radius * 0.2, centerX, centerY, radius);
+    gradient.addColorStop(0, 'rgba(255,255,255,1)');
+    gradient.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = gradient;
+
     ctx.beginPath();
     ctx.arc(centerX, centerY, radius, 0, Math.PI * 2, true);
     ctx.fill();
+
     ctx.globalCompositeOperation = 'source-over';
   }
 
