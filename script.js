@@ -36,13 +36,29 @@ function generateQR() {
     },
     imageOptions: {
       crossOrigin: "anonymous",
-      margin: 10,
+      margin: 12,
       hideBackgroundDots: true,
-      imageSize: 0.5
+      imageSize: 0.55
     }
   });
 
   qrCodeInstance.append(canvasContainer);
+
+  const canvasEl = canvasContainer.querySelector("canvas");
+  if (canvasEl) {
+    const ctx = canvasEl.getContext("2d");
+    const centerX = canvasEl.width / 2;
+    const centerY = canvasEl.height / 2;
+    const radius = (canvasEl.width * 0.55) / 2 + 6;
+
+    ctx.globalCompositeOperation = 'destination-over';
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, 0, Math.PI * 2, true);
+    ctx.fill();
+    ctx.globalCompositeOperation = 'source-over';
+  }
+
   canvasContainer.classList.remove("hidden");
   validationMessage.innerHTML = "✅ QR code generated successfully!";
   if (footer) footer.classList.remove("hidden");

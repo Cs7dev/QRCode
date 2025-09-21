@@ -71,7 +71,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* Floating label input */
+/* Floating label input  */
 .form-group.floating {
   position: relative;
   margin-bottom: 24px;
@@ -159,6 +159,15 @@ button:hover {
   transform: scale(1.07);
   box-shadow: 0 0 24px rgba(43, 190, 96, 0.19);
 }
+
+#qrCanvas canvas {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  transition: filter 0.3s ease;
+}
+#qrCanvas:hover canvas {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9));
+}
+
 .qr-canvas-glow {
   box-shadow: 0 0 20px 3px rgba(77, 232, 235, 0.08);
 }
