@@ -1,93 +1,102 @@
-/* Reset some defaults */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+  --bg: #ffffff;
+  --text: #333333;
+  --accent: #2d0bf1;
+  --button: #09ec37;
+  --button-hover: #13a148;
+  --canvas-bg: #f5f9f6;
+  --canvas-border: #0770f9;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --accent: #00bfff;
+  --button: #1f9c4d;
+  --button-hover: #2ddc6f;
+  --canvas-bg: #1e1e1e;
+  --canvas-border: #00bfff;
 }
 
 body {
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .container {
-  background: #fff;
+  background: var(--bg);
   width: 400px;
-  padding: 30px 40px 40px 40px;
+  padding: 30px 40px;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
   text-align: center;
+  animation: slideUp 0.8s ease-out;
 }
 
 h2 {
-  font-weight: 700;
-  margin-bottom: 24px;
-  color: #2d0bf1;
-  letter-spacing: 1.1px;
+  color: var(--accent);
   font-size: 28px;
+  margin-bottom: 24px;
 }
 
 input[type="text"] {
   width: 100%;
   padding: 14px 18px;
   margin-bottom: 24px;
-  border: 2px solid #1e0581;
+  border: 2px solid var(--accent);
   border-radius: 10px;
   font-size: 16px;
-  outline-color: #662bbe;
-  transition: 0.3s border-color ease;
-}
-
-input[type="text"]:focus {
-  border-color: #4104f8;
+  background: var(--bg);
+  color: var(--text);
 }
 
 button {
-  background-color: #09ec37;
+  background-color: var(--button);
   color: white;
-  padding: 16px 0;
+  padding: 14px 0;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   width: 100%;
-  box-shadow: 0 6px 20px rgba(43, 190, 96, 0.4);
-  transition: background-color 0.3s ease;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #13a148;
+  background-color: var(--button-hover);
+  transform: scale(1.05);
 }
 
-/* QR canvas styles */
 #qrCanvas {
   margin-top: 30px;
   display: flex;
   justify-content: center;
-}
-
-#qrCanvas:empty {
-  border: none;
-  padding: 0;
-  background: transparent;
-}
-
-#qrCanvas:not(:empty) {
-  border: 8px solid #0770f9;
+  border: 8px solid var(--canvas-border);
   border-radius: 24px;
   padding: 14px;
-  background: #f5f9f6;
+  background: var(--canvas-bg);
+  animation: fadeInQR 0.6s ease forwards;
 }
 
-/* Responsive */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInQR {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 @media(max-width: 450px) {
   .container {
     width: 100%;

@@ -1,0 +1,15 @@
+{
+  "name": "QR Code Creator",
+  "short_name": "QR Creator",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#2d0bf1",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
