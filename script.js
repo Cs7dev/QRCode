@@ -28,7 +28,7 @@ function generateQR() {
     data: inputValue,
     image: "assets/logo.png",
     dotsOptions: {
-      color: "#03136fff",
+      color: "#03136f",
       type: "rounded"
     },
     backgroundOptions: {
@@ -36,9 +36,9 @@ function generateQR() {
     },
     imageOptions: {
       crossOrigin: "anonymous",
-      margin: 6,
+      margin: 10,
       hideBackgroundDots: true,
-      imageSize: 0.4
+      imageSize: 0.5
     }
   });
 
