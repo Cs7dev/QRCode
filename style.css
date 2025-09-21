@@ -117,8 +117,9 @@ button:hover {
 }
 
 footer {
-  margin-top: 40px;
-  font-size: 14px;
+  position: fixed;
+  bottom: 12px;
+  font-size: 13px;
   text-align: center;
   animation: fadeIn 1s ease;
 }
@@ -128,12 +129,13 @@ footer a {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  font-weight: 500;
 }
 
 .github-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
 .hidden {
