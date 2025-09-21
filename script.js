@@ -8,22 +8,25 @@ function isValidInput(input) {
 function generateQR() {
   const inputValue = document.getElementById("qrInput").value.trim();
   const canvasContainer = document.getElementById("qrCanvas");
-
-  if (!isValidInput(inputValue)) {
-    canvasContainer.innerHTML = "⚠️ Enter a valid URL or text (min 3 characters)";
-    return;
-  }
+  const validationMessage = document.getElementById("validationMessage");
+  const footer = document.getElementById("footer");
 
   canvasContainer.innerHTML = "";
+  canvasContainer.classList.add("hidden");
+  validationMessage.innerHTML = "";
+  footer.classList.add("hidden");
 
-  const logoPath = "assets/logo.png";
+  if (!isValidInput(inputValue)) {
+    validationMessage.innerHTML = "⚠️ Invalid input. Please enter a valid URL or at least 3 characters.";
+    return;
+  }
 
   qrCodeInstance = new QRCodeStyling({
     width: 250,
     height: 250,
     type: "canvas",
     data: inputValue,
-    image: logoPath,
+    image: "assets/logo.png",
     dotsOptions: {
       color: "#03136fff",
       type: "rounded"
@@ -40,13 +43,9 @@ function generateQR() {
   });
 
   qrCodeInstance.append(canvasContainer);
-}
-
-function livePreview() {
-  const inputValue = document.getElementById("qrInput").value.trim();
-  if (isValidInput(inputValue)) {
-    generateQR();
-  }
+  canvasContainer.classList.remove("hidden");
+  validationMessage.innerHTML = "✅ QR code generated successfully!";
+  footer.classList.remove("hidden");
 }
 
 function downloadQR() {

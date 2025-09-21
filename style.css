@@ -23,21 +23,36 @@ body {
   color: var(--text);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
+  padding: 40px 20px;
+  transition: background 0.3s ease, color 0.3s ease;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.dark-toggle:hover {
+  transform: scale(1.2);
 }
 
 .container {
   background: var(--bg);
-  width: 400px;
-  padding: 30px 40px;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 30px;
   border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
   text-align: center;
-  animation: slideUp 0.8s ease-out;
+  animation: fadeIn 0.8s ease-out;
 }
 
 h2 {
@@ -48,7 +63,7 @@ h2 {
 
 input[type="text"] {
   width: 100%;
-  padding: 14px 18px;
+  padding: 16px 20px;
   margin-bottom: 24px;
   border: 2px solid var(--accent);
   border-radius: 10px;
@@ -67,7 +82,7 @@ button {
   border-radius: 12px;
   cursor: pointer;
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   transition: all 0.3s ease;
 }
 
@@ -87,25 +102,43 @@ button:hover {
   animation: fadeInQR 0.6s ease forwards;
 }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
+#validationMessage {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--accent);
+  animation: fadeIn 0.5s ease;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.github-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInQR {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
-}
-
-@media(max-width: 450px) {
-  .container {
-    width: 100%;
-    padding: 30px 20px;
-    border-radius: 15px;
-  }
-
-  button {
-    font-size: 16px;
-    padding: 14px 0;
-  }
 }

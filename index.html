@@ -9,19 +9,28 @@
   <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 </head>
 <body>
+  <div class="dark-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+    🌙
+  </div>
+
   <div class="container">
     <h2>QR Code Creator</h2>
 
-    <input id="qrInput" type="text" placeholder="Type text, URL, or image link" oninput="livePreview()" />
+    <input id="qrInput" type="text" placeholder="Type text, URL, or image link" />
 
-    <div class="controls">
-      <button onclick="generateQR()">Generate QR</button>
-      <button onclick="downloadQR()">Download QR</button>
-      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
-    </div>
+    <button onclick="generateQR()">Generate QR</button>
+    <button onclick="downloadQR()">Download QR</button>
 
-    <div id="qrCanvas"></div>
+    <div id="qrCanvas" class="hidden"></div>
+    <div id="validationMessage"></div>
   </div>
+
+  <footer id="footer" class="hidden">
+    <a href="https://github.com/Cs7dev" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="github-icon" />
+      Cs7dev
+    </a>
+  </footer>
 
   <script src="script.js"></script>
 </body>
