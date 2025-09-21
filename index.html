@@ -14,7 +14,10 @@
   <main class="container">
     <h2>QR Code Creator</h2>
 
-    <input id="qrInput" type="text" placeholder="Type text, URL, or image link" />
+    <div class="form-group">
+      <input id="qrInput" type="text" required />
+      <label for="qrInput">Type text, URL, or image link</label>
+    </div>
 
     <div class="button-group">
       <button onclick="generateQR()">Generate QR</button>

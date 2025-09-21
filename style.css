@@ -55,6 +55,7 @@ body {
   box-shadow: 0 15px 35px rgba(0,0,0,0.1);
   text-align: center;
   animation: fadeIn 0.8s ease-out;
+  overflow: hidden;
 }
 
 h2 {
@@ -63,23 +64,41 @@ h2 {
   margin-bottom: 20px;
 }
 
-input[type="text"] {
+/* Floating label input */
+.form-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.form-group input {
   width: 100%;
-  padding: 14px 18px;
-  margin-bottom: 16px;
+  padding: 16px 18px;
+  font-size: 16px;
   border: 2px solid var(--accent);
   border-radius: 10px;
-  font-size: 16px;
   background: var(--bg);
   color: var(--text);
   box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input[type="text"]:focus {
-  border-color: var(--button-hover);
-  box-shadow: 0 0 6px rgba(43, 190, 96, 0.3);
-  outline: none;
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  background: var(--bg);
+  padding: 0 6px;
+  color: var(--accent);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 13px;
+  color: var(--button-hover);
 }
 
 .button-group {
@@ -123,6 +142,14 @@ button:hover {
   padding: 14px;
   background: var(--canvas-bg);
   animation: fadeInQR 0.6s ease forwards;
+  max-width: 100%;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#qrCanvas:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 12px rgba(43, 190, 96, 0.3);
 }
 
 footer {
